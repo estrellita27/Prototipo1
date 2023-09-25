@@ -9,6 +9,10 @@ using Random = Unity.Mathematics.Random;
 namespace TMG.Shooter{
     public class SpawnerAuthoring : MonoBehaviour, IConvertGameObjectToEntity
     {
+        [SerializeField] private float _spawnInterval;
+        [SerializeField] private GameObject _enemyWalterPrefab;
+
+
         public void Convert(Entity spawnerEntity, EntityManager dstManager, GameObjectConversionSystem conversionSystem)
         {
             var spawnTransforms = transform.GetComponentsInChildren<Transform>();
@@ -24,6 +28,24 @@ namespace TMG.Shooter{
 
             var spawnPointReference = blobBuilder.CreateBlobAssetReference<SpawnPointArray>(Allocator.Persistent);
             dstManager.AddComponentData(spawnerEntity, new SpawnPointReference { Value = spawnPointReference });
+
+            dstManager.AddComponentData(spawnerEntity, new SpawnTimer
+            {
+                Value = 0f,
+                Interval = _spawnInterval
+
+            });
+
+            var enemyWalterEntityPrefab = conversionSystem.GetPrimaryEntity(_enemyWalterPrefab);
+            dstManager.AddComponentData(spawnerEntity, new EnemyWalterPrefab { Value = enemyWalterEntityPrefab });
+
+            var randomSeed = (uint)System.DateTime.Now.Millisecond;
+            dstManager.AddComponentData(spawnerEntity, new EntityRandom {  Value = Random.CreateFromIndex(randomSeed) });
+        }
+
+        public void DeclareReferencedPrefabs(List<GameObject> referencedPrefabs)
+        {
+            referencedPrefabs.Add(_enemyWalterPrefab);
         }
     }
 
