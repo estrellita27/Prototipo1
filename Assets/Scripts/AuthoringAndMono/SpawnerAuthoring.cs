@@ -1,4 +1,3 @@
-
 using System.Collections.Generic;
 using Unity.Collections;
 using Unity.Entities;
@@ -40,13 +39,14 @@ namespace TMG.Shooter{
             dstManager.AddComponentData(spawnerEntity, new EnemyWalterPrefab { Value = enemyWalterEntityPrefab });
 
             var randomSeed = (uint)System.DateTime.Now.Millisecond;
-            dstManager.AddComponentData(spawnerEntity, new EntityRandom {  Value = Random.CreateFromIndex(randomSeed) });
+            dstManager.AddComponentData(spawnerEntity, new EntityRandom { Value = Random.CreateFromIndex(randomSeed) });
         }
 
         public void DeclareReferencedPrefabs(List<GameObject> referencedPrefabs)
         {
             referencedPrefabs.Add(_enemyWalterPrefab);
         }
+
     }
 
     public struct SpawnPoint
