@@ -48,6 +48,7 @@ namespace TMG.Shooter{
         }
 
     }
+  
 
     public struct SpawnPoint
     {
