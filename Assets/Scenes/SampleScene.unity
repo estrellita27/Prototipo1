@@ -544,7 +544,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spawnInterval: 3
-  _enemyWalterPrefab: {fileID: 6248469409811498033, guid: fe44577794ef4ee46beab956213b7f9c, type: 3}
+  _enemyWalterPrefab: {fileID: 5993810191740939324, guid: fe44577794ef4ee46beab956213b7f9c, type: 3}
 --- !u!1 &1544475722
 GameObject:
   m_ObjectHideFlags: 0
