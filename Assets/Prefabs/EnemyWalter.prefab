@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 7471430489946492005}
   - component: {fileID: 6634721419499118600}
   - component: {fileID: 688659549583573702}
-  - component: {fileID: 8527174110654013070}
+  - component: {fileID: 1577954510787907069}
   m_Layer: 0
   m_Name: EnemyWalter
   m_TagString: Untagged
@@ -145,7 +145,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _moveSpeed: 20
   _rotationSpeed: 500
---- !u!114 &8527174110654013070
+--- !u!114 &1577954510787907069
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -154,6 +154,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 5993810191740939324}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92990a1680f995e4d82d6c681f948935, type: 3}
+  m_Script: {fileID: 11500000, guid: 13f53a54f1ddaab41ad6c067d3eed916, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _lateralAmplitude: 50
+  _lateralFrequency: 10
+  _minDistanceFromTarget: 20

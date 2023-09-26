@@ -6,7 +6,7 @@ using UnityEngine;
 using Random = Unity.Mathematics.Random;
 
 namespace TMG.Shooter{
-    public class SpawnerAuthoring : MonoBehaviour, IConvertGameObjectToEntity
+    public class SpawnerAuthoring : MonoBehaviour, IConvertGameObjectToEntity, IDeclareReferencedPrefabs
     {
         [SerializeField] private float _spawnInterval;
         [SerializeField] private GameObject _enemyWalterPrefab;
