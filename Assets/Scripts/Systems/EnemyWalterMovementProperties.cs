@@ -14,10 +14,8 @@ namespace TMG.Shooter
         public float Value; 
     }
 
-    public struct SetTargetTag : IComponentData
-    {
-       
-    }
+    public struct SetTargetTag : IComponentData {}
+
     public struct TargetEntity : IComponentData
     {
         public Entity Value;

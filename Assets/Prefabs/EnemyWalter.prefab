@@ -159,4 +159,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _lateralAmplitude: 50
   _lateralFrequency: 10
-  _minDistanceFromTarget: 20
+  _minDistanceFromTarget: 5
