@@ -4,6 +4,7 @@ using Unity.Collections.LowLevel.Unsafe;
 using Unity.Entities;
 using Unity.Mathematics;
 using Unity.Transforms;
+using UnityEngine;
 
 
 namespace TMG.Shooter
@@ -36,6 +37,7 @@ namespace TMG.Shooter
         {
             if (!TranslationLookup.HasComponent(targetEntity.Value)) return;
             var targetPosition = TranslationLookup[targetEntity.Value].Value;
+            
             if (math.distancesq(translation.Value, targetPosition) > movementProperties.MinDistanceFromTargetSq)
             {
                 var currentMovement = localToWorld.Forward * moveSpeed.Value * DeltaTime;
