@@ -11,6 +11,7 @@ namespace TMG.Shooter
             dstManager.AddComponent<PlayerMoveInput>(newPlayerWalter);
             dstManager.AddComponent<WorldMousePosition>(newPlayerWalter);
             dstManager.AddComponent<PlayerWalterTag>(newPlayerWalter);
+            dstManager.AddComponent<PlayerWeaponKeyPressed>(newPlayerWalter);
         }
 
     }

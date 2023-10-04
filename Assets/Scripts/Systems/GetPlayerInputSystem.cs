@@ -16,6 +16,7 @@ namespace TMG.Shooter
         {
             _playerInputKeys = GetSingleton<PlayerInputKeys>();
             _mainCamera = Camera.main;
+            RequireSingletonForUpdate<PlayerWalterTag>();
 
         }
             
@@ -27,6 +28,9 @@ namespace TMG.Shooter
 
             var curWorldMousePos = GetWorldMousePosition();
             SetSingleton(curWorldMousePos);
+
+            var curPlayerWeaponKeyPressed = GetPlayerWeaponKeyPressed();
+            SetSingleton(curPlayerWeaponKeyPressed);
         }
         private PlayerMoveInput GetPlayerMoveInput()
         {
@@ -78,6 +82,14 @@ namespace TMG.Shooter
                 Value = worldMousePos
             };
         }
-           
+        private PlayerWeaponKeyPressed GetPlayerWeaponKeyPressed()
+        {
+            var primaryWeaponKeyPressed = Input.GetKey(_playerInputKeys.PrimaryWeaponKey);
+            return new PlayerWeaponKeyPressed
+            {
+                Value = primaryWeaponKeyPressed
+            };
+        }
+
     }
 }
